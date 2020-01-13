@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INSTALL_PATH="/goinfre/$USER/miniconda3"
+INSTALL_PATH="/goinfre/miniconda3"
 
 function get_choice()
 {
@@ -29,8 +29,18 @@ function install()
 	echo "Install 64-bit Miniconda in $INSTALL_PATH." > /dev/tty
 	sh $script -b -p $INSTALL_PATH > /dev/null
 	echo "Python has been installed." > /dev/tty
-	echo -n "run export PATH=$bin:\$PATH command"
-	echo " to change the default python interpreter path."
+	which python
+	if grep -q "^export PATH=$bin" ~/.zshrc
+	then
+		echo "export already in .zshrc" > /dev/tty
+		echo "use source ~/.zshrc cmd to reload you zsh conf." > /dev/tty
+		source ~/.zshrc
+	else
+		echo "adding export to .zshrc ..." > /dev/tty
+		echo "export PATH=$bin:$PATH" >> ~/.zshrc
+		echo "use source ~/.zshrc cmd to reload you zsh conf." > /dev/tty
+		source ~/.zshrc
+	fi
 	rm $script
 }
 
