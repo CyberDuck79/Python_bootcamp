@@ -18,6 +18,7 @@ except ValueError:
 return_lst = []
 word_lst = arg_str.split()
 for word in word_lst:
+	word = word.translate(str.maketrans('', '', string.punctuation))
 	if len(word) > nb:
-		return_lst.append(word.translate(None, string.punctuation))
+		return_lst.append(word)
 print(return_lst)
