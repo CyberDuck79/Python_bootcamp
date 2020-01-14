@@ -19,21 +19,21 @@ class Bank(object):
 	def add(self, account):
 		self.account.append(account)
 	
-	def check_account(self, account: Account, origin: str):
+	def check_account(self, account: Account, name: str):
 		if not isinstance(account, Account):
 			raise TypeError("the account is not a account instance.")
-		attributes = dir(origin)
+		attributes = dir(account)
 		if not len(attributes) % 2:
-			raise ValueError(f"{origin} account is corrupted : even number of attributes.")
+			raise ValueError(f"{name} account is corrupted : even number of attributes.")
 		for attr in attributes:
 			if attr.startswith('b'):
-				raise ValueError(f"{origin} account is corrupted : an attribute start with b.")
+				raise ValueError(f"{name} account is corrupted : an attribute start with b.")
 			elif attr.startswith("zip") or attr.startswith("addr"):
 				check_arg = 1
 		if not check_arg:
-			raise ValueError(f"{origin} account is corrupted : missing mandatory attributes.")
+			raise ValueError(f"{name} account is corrupted : missing mandatory attributes.")
 		if "name" not in attributes or "id" not in attributes or "value" not in attributes:
-			raise ValueError(f"{origin} account is corrupted : missing mandatory attributes.")
+			raise ValueError(f"{name} account is corrupted : missing mandatory attributes.")
 	
 	def transfer(self, origin, dest, amount):
 		"""
