@@ -5,7 +5,7 @@ if len(sys.argv) != 2:
 	quit()
 try:
 	nb = int(sys.argv[1])
-except:
+except ValueError:
 	print("ERROR")
 	quit()
 else:

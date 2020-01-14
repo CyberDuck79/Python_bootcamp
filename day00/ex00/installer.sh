@@ -33,7 +33,6 @@ function install()
 	if grep -q "^export PATH=$bin" ~/.zshrc
 	then
 		echo "export already in .zshrc" > /dev/tty
-		echo "use source ~/.zshrc cmd to reload you zsh conf." > /dev/tty
 		source ~/.zshrc
 	else
 		echo "adding export to .zshrc ..." > /dev/tty

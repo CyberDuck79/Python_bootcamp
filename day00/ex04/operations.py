@@ -21,11 +21,9 @@ else:
 print("Sum:\t\t{}".format(nb1 + nb2))
 print("Difference:\t{}".format(nb1 - nb2))
 print("Product:\t{}".format(nb1 * nb2))
-if (nb2 == 0):
-	print("Quotient:\tERROR (div by zero)")
-else:
+try:
 	print("Quotient:\t{}".format(float(nb1) / float(nb2)))
-if (nb2 == 0):
-	print("Remainder:\tERROR (modulo by zero)")
-else:
 	print("Remainder:\t{}".format(nb1 % nb2))
+except ZeroDivisionError:
+	print("Quotient:\tERROR (div by zero)")
+	print("Remainder:\tERROR (modulo by zero)")

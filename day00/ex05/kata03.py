@@ -1,2 +1,2 @@
 phrase = "The right format"
-print("{:->42}".format(phrase), end = '')
+print(f"{phrase:->42}", end = '')

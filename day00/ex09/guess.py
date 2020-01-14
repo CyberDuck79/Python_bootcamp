@@ -30,4 +30,4 @@ if (attempt == 1):
 	print("Congratulations! You got it on your first try!")
 else:
 	print("Congratulations, you've got it!")
-	print("You won in {} attempts!".format(attempt))
+	print(f"You won in {attempt} attempts!")

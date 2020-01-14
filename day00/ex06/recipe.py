@@ -24,10 +24,10 @@ cookbook = {
 
 # Print functions
 def print_recipe(recipe):
-	print("\nrecipe for {}:".format(recipe))
-	print("Ingredients list: {}".format(cookbook[recipe]['ingredients']))
-	print("To be eaten for {}.".format(cookbook[recipe]['meal']))
-	print("Takes {} minutes of cooking".format(cookbook[recipe]['prep_time']))
+	print(f"\nrecipe for {recipe}:")
+	print(f"Ingredients list: {cookbook[recipe]['ingredients']}")
+	print(f"To be eaten for {cookbook[recipe]['meal']}.")
+	print(f"Takes {cookbook[recipe]['prep_time']} minutes of cooking")
 
 def print_cookbook():
 	for recipe in cookbook:

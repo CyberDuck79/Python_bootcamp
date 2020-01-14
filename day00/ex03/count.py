@@ -4,7 +4,7 @@ def text_analyzer(text = ""):
 	"""This function counts the number of upper characters, lower characters,
 punctuation and spaces in a given text."""
 	while text == "":
-		text = raw_input("What is the text to analyse?\n>> ")
+		text = input("What is the text to analyse?\n>> ")
 	print("The text contains {} characters:".format(len(text)))
 	upper_letters = 0
 	lower_letters = 0

@@ -1,4 +1,5 @@
 import sys
+import string
 
 if len(sys.argv) != 3:
 	print("ERROR")
@@ -18,5 +19,5 @@ return_lst = []
 word_lst = arg_str.split()
 for word in word_lst:
 	if len(word) > nb:
-		return_lst.append(word)
+		return_lst.append(word.translate(None, string.punctuation))
 print(return_lst)
